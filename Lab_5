@@ -1,1 +1,24 @@
+#Lab 1
+def cal ():
+    num=int(input("Enter number of scores: "))
+    score=[]
+    for i in range(num):
+        score=int(input("Enter the score"))
+        score.append(score)
+    print(score)
 
+    avg=sum(score)/
+            len(score)
+    if avg>90:
+        print("A")
+    elif avg >=80 and avg<90:
+        print("B")
+    elif avg >=70 and avg<79:
+        print("C")
+    elif avg >=60 and avg<69:
+        print("D")
+    elif avg >=0 and avg<60:
+        print("F")
+cal
+
+#Lab 2
