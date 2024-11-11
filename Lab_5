@@ -1,24 +1,65 @@
 #Lab 1
 def cal ():
-    num=int(input("Enter number of scores: "))
-    score=[]
-    for i in range(num):
-        score=int(input("Enter the score"))
-        score.append(score)
-    print(score)
+    num_scores=int(input("Enter number of scores: "))
+    scores_list=[]
+    for i in range(num_scores):
+        score=float(input("Enter the score"))
+        scores_list.append(score)
+    print(scores_list)
 
-    avg=sum(score)/
-            len(score)
-    if avg>90:
-        print("A")
+    avg=sum(scores_list)/len(scores_list)
+    if avg>=90:
+        print("A", avg)
     elif avg >=80 and avg<90:
-        print("B")
+        print("B", avg)
     elif avg >=70 and avg<79:
-        print("C")
+        print("C", avg)
     elif avg >=60 and avg<69:
-        print("D")
-    elif avg >=0 and avg<60:
-        print("F")
-cal
+        print("D", avg)
+    else:
+        print("F", avg)
+cal()
 
 #Lab 2
+def count_even_odd():
+    numbers=int(input("Enter integers sparated by spaces: "))
+    even_count = 0
+    odd_count = 0
+    for num in numbers:
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    print("Even numbers count: ", even_count)
+    print("Odd numbers count: ", odd_count)
+count_even_odd()
+
+#Lab 3
+while True:
+    # Ask the user to enter two lists or type "exit" to quit
+    user_input = input("Enter two lists of numbers separated by a space, or type 'exit' to quit: ")
+
+    # Check if the user wants to exit
+    if user_input.lower() == 'exit':
+        print("Exiting the program.")
+        break
+
+    # Split the input into two parts
+    parts = user_input.split()
+    if len(parts) != 2:
+        print("Please enter exactly two lists of numbers separated by a space.")
+        continue
+
+    # Separate and process each list
+    list1 = parts[0].split(',')
+    list2 = parts[1].split(',')
+
+    # Convert items to integers, with duplicates removed
+    combined_list = []
+    for item in list1 + list2:
+        num = int(item.strip())
+        if num not in combined_list:
+            combined_list.append(num)
+
+    # Print the merged list without duplicates
+    print("Merged list without duplicates:", combined_list)
